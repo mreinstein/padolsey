@@ -1,0 +1,25 @@
+{
+  "name": "padolsey",
+  "version": "1.0.0",
+  "description": "generate padolsey patterns",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mreinstein/padolsey.git"
+  },
+  "keywords": [
+    "padolsey",
+    "pattern",
+    "procedural",
+    "texture",
+    "texture"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mreinstein/padolsey/issues"
+  },
+  "homepage": "https://github.com/mreinstein/padolsey#readme"
+}
