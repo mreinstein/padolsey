@@ -1,8 +1,8 @@
 ## padolsey
 
-![Alt text](padolsey.png "sample padolsey pattern")
+procedurally generate padolsey patterns
 
-generate padolsey patterns
+![Alt text](padolsey.png "sample padolsey pattern")
 
 
 ### usage
