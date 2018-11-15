@@ -1,5 +1,3 @@
-'use strict'
-
 const grays = [
       [ 26, 29 ],
       [ 32, 37 ],
@@ -11,7 +9,7 @@ const grays = [
 let c, ctx
 
 
-function random( max, min ) {
+function random ( max, min ) {
   min = min || 0
   return Math.random() * ( max - min ) + min
 }
@@ -29,8 +27,8 @@ function cell( x, y, size ) {
 }
 
 
-module.exports = function padolsey() {
-  if(!c) {
+export default function padolsey () {
+  if (!c) {
     c = document.createElement( 'canvas' )
     ctx = c.getContext( '2d' )
   }
@@ -49,8 +47,8 @@ module.exports = function padolsey() {
   ctx.fillStyle = 'rgb(18, 18, 18)'
   ctx.fillRect( 0, 0, cw, ch )
 
-  for(let x = 0; x < cols; x ++ ){
-    for(let y = 0; y < rows; y ++ ){
+  for (let x = 0; x < cols; x ++ ){
+    for (let y = 0; y < rows; y ++ ){
       cell(
         ( x * sizes[ 0 ] ) + ( x * gap ),
         ( y * sizes[ 0 ] ) + ( y * gap ),
@@ -59,9 +57,9 @@ module.exports = function padolsey() {
     }
   }
 
-  for(let freq = 0; freq < frequency.length; freq++ ) {
-    if( frequency[ freq ] ) {
-      for(let i = 0; i < frequency[ freq ]; ) {
+  for (let freq = 0; freq < frequency.length; freq++ ) {
+    if ( frequency[ freq ] ) {
+      for (let i = 0; i < frequency[ freq ]; ) {
         let canDraw, sizeNew, pad, xNew, yNew, storeLength
 
         canDraw = true
@@ -71,10 +69,10 @@ module.exports = function padolsey() {
         yNew = Math.floor( random( 1, rows - pad ) ) * ( cw / rows )
         storeLength = store.length
 
-        if( storeLength ) {
-          for(let j = 0; j < storeLength; j++ ) {
+        if ( storeLength ) {
+          for (let j = 0; j < storeLength; j++ ) {
             let storeCell = store[ j ]
-            if( !(
+            if ( !(
               xNew + sizeNew + ( cw / cols ) < storeCell.x ||
               yNew + sizeNew + ( ch / rows ) < storeCell.y ||
               xNew > storeCell.x + storeCell.size + ( cw / cols ) ||
@@ -86,7 +84,7 @@ module.exports = function padolsey() {
           }
         }
 
-        if( canDraw ) {
+        if ( canDraw ) {
           cell( xNew, yNew, sizeNew )
           store.push( { x: xNew, y: yNew, size: sizeNew } )
           i++
