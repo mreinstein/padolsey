@@ -15,7 +15,7 @@ function random ( max, min ) {
 }
 
 
-function cell( x, y, size ) {
+function cell ( x, y, size ) {
   let gray = Math.floor( random( grays.length ) ),
       fill = grays[ gray ][ 0 ],
       stroke = grays[ gray ][ 1 ]
