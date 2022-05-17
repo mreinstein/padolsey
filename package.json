@@ -4,8 +4,7 @@
   "description": "generate padolsey patterns",
   "type": "module",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mreinstein/padolsey.git"
@@ -22,9 +21,10 @@
     "url": "https://github.com/mreinstein/padolsey/issues"
   },
   "homepage": "https://github.com/mreinstein/padolsey#readme",
-  "devDependencies": {
-  },
   "engines": {
     "node": ">=12.17"
+  },
+  "dependencies": {
+    "alea": "^1.0.1"
   }
 }

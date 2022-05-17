@@ -1,3 +1,7 @@
+# 2.1.0
+* use much better random number generator
+
+
 # 2.0.0
 * remove node support < 12.17
 * remove commonjs build and all build tooling

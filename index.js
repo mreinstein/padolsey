@@ -1,3 +1,6 @@
+import Alea from 'alea'
+
+
 const grays = [
       [ 26, 29 ],
       [ 32, 37 ],
@@ -9,14 +12,20 @@ const grays = [
 let c, ctx
 
 
-function random ( max, min ) {
-  min = min || 0
-  return Math.random() * ( max - min ) + min
+const defaultSeed = Math.random()
+const defaultRng = new Alea(defaultSeed)
+
+
+// @param function random  (optional) source of random numbers to use, should return between [0..1]
+function randomInt (min, max, random=defaultRng) {
+  return Math.floor(random() * (max - min + 1) + min)
 }
+
+console.log('lol')
 
 
 function cell ( x, y, size ) {
-  let gray = Math.floor( random( grays.length ) ),
+  let gray = randomInt(0, grays.length-1),/*  Math.floor( random( grays.length ) ),*/
       fill = grays[ gray ][ 0 ],
       stroke = grays[ gray ][ 1 ]
 
@@ -65,8 +74,9 @@ export default function padolsey () {
         canDraw = true
         sizeNew = sizes[ freq ]
         pad = Math.ceil( ( sizeNew / cw ) * rows )
-        xNew = Math.floor( random( 1, cols - pad ) ) * ( ch / cols )
-        yNew = Math.floor( random( 1, rows - pad ) ) * ( cw / rows )
+
+        xNew = randomInt(1, cols - pad) * ( ch / cols )
+        yNew = randomInt(1, rows - pad) * ( cw / rows )
         storeLength = store.length
 
         if ( storeLength ) {
