@@ -1,6 +1,6 @@
 {
   "name": "padolsey",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "generate padolsey patterns",
   "type": "module",
   "main": "index.js",
